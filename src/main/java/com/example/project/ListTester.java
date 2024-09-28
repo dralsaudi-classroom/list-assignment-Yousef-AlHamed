@@ -7,21 +7,22 @@ public class ListTester {
     		list.findFirst();
     		T tmp = list.retrieve();
     		list.remove();
-    		while (!list.last())
+    		while (!list.empty() && !list.last())
     			list.findNext();
     		list.insert(tmp);
     	}
     }
     public static <T> void reverseCopy(DLL<T> l1, DLL<T> l2)
     {
-    	l1.findFirst();
-    	while (!l1.last())
-    		l1.findNext();
-    	
-    	while (!l1.first()) {
-    		l2.insert(l1.retrieve());
-    		l2.findPrevious();
-    	}
-    	l2.insert(l1.retrieve());
-    }
+		if (!l1.empty()) {
+			l1.findFirst();
+			while (!l1.last())
+				l1.findNext();
+			while (!l1.first()) {
+				l2.insert(l1.retrieve());
+				l1.findPrevious();
+			}
+			l2.insert(l1.retrieve());
+		}
+	}
 }

@@ -65,8 +65,9 @@ public class LinkedList<T> implements List<T>{
     		int innerCount = 0;
     		
     		while (runner2 != null) {
-    			if (runner2.equals(runner))
+    			if (runner2.data == runner.data)
     				innerCount++;
+    			runner2 = runner2.next;
     		}
     		
     		if (innerCount > outerCount) {
