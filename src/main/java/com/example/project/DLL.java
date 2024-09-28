@@ -68,18 +68,18 @@ public class DLL<T> {
     	DLLNode<T> tmp1 = head;
     	DLLNode<T> tmp2 = head;
     	
-    	while (tmp1.data != e1 || tmp1.data != null) {
+    	while (tmp1.data != e1 && tmp1.data != null) {
     		tmp1 = tmp1.next;
     	}
-    	while (tmp2.data != e2 || tmp2.data != null) {
+    	while (tmp2.data != e2 && tmp2.data != null) {
     		tmp2 = tmp2.next;
     	}
     	
-    	if (tmp1.data != null &&	tmp2.data != null) {
-    	tmp1.next = tmp2;
-    	tmp2.previous = tmp1;
-    	current = head;
-    	}
+		if (tmp1.data != null && tmp2.data != null) {
+			tmp1.next = tmp2;
+			tmp2.previous = tmp1;
+			current = head;
+		}
     	
     }
 }
