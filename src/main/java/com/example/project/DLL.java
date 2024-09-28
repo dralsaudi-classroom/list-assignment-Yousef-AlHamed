@@ -75,7 +75,7 @@ public class DLL<T> {
     		tmp2 = tmp2.next;
     	}
     	
-    	if (tmp1 != null &&	tmp2.data != null) {
+    	if (tmp1.data != null &&	tmp2.data != null) {
     	tmp1.next = tmp2;
     	tmp2.previous = tmp1;
     	current = head;
